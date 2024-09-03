@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
         $request->session()->passwordConfirmed();
      
         return redirect()->intended();
-    })->middleware(['auth', 'throttle:6,1']);
+    })->middleware(['throttle:6,1']);
 });
 
 require __DIR__.'/auth.php';
